@@ -57,7 +57,7 @@ export default {
     updateTime() {
       const time = new Date();
       const hours = time.getHours();
-      const minutes = time.getMinutes() < 10 ? `0 + ${ time.getMinutes() }` : time.getMinutes();
+      const minutes = time.getMinutes() < 10 ? `0${ time.getMinutes() }` : time.getMinutes();
 
       this.time = `${ hours }:${ minutes }`;
     }
