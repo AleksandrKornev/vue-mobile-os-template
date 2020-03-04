@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__left">
-      <span class="header__left__time">13:50</span>
+      <span class="header__left__time">{{ time }}</span>
     </div>
     <div class="header__right">
       <div class="header__right__internet">
@@ -28,13 +28,39 @@ export default {
   name: "Header",
   data() {
     return {
-      mobileInternetProcent: 20
+      mobileInternetProcent: 20,
+      time: null,
+      timer: null
     };
   },
   computed: {
     isInternetBarOneActive() { return this.mobileInternetProcent > 0; },
     isInternetBarTwoActive() { return this.mobileInternetProcent > 40; },
     isInternetBarThreeActive() { return this.mobileInternetProcent > 80; }
+  },
+  created() {
+    this.startTimer();
+  },
+  methods: {
+    startTimer() {
+      this.updateTime();
+
+      if (!this.timer) {
+        this.timer = setInterval(() => {
+          this.updateTime();
+        }, 1000);
+      } else {
+        clearInterval(this.timer);
+      }
+    },
+
+    updateTime() {
+      const time = new Date();
+      const hours = time.getHours();
+      const minutes = time.getMinutes() < 10 ? `0 + ${ time.getMinutes() }` : time.getMinutes();
+
+      this.time = `${ hours }:${ minutes }`;
+    }
   }
 };
 </script>

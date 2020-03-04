@@ -18,7 +18,8 @@ module.exports = {
     "quote-props": ["error", "as-needed"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     "eol-last": ["error", "never"],
-    "no-plusplus": 'off'
+    "no-plusplus": "off",
+    "template-curly-spacing": ["error", "always"]
   },
   overrides: [
     {
