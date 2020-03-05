@@ -19,7 +19,12 @@ module.exports = {
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     "eol-last": ["error", "never"],
     "no-plusplus": "off",
-    "template-curly-spacing": ["error", "always"]
+    "template-curly-spacing": ["error", "always"],
+    "global-require": "off",
+    "import/no-dynamic-require": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "prefer-destructuring": ["error", { object: false, array: false }],
+    "no-return-assign": "off"
   },
   overrides: [
     {

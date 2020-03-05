@@ -1,14 +1,25 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+
+import Home from "@/views/Home.vue";
+import App from "@/views/MobileApp/index.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "*",
+    redirect: "/"
+  },
+  {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
+  },
+  {
+    path: "/app/:app",
+    name: "App",
+    component: App
   }
 ];
 
