@@ -104,7 +104,7 @@ export default {
     },
 
     startApp(path) {
-      this.$router.push(`/app/${ path }`);
+      this.$router.push(`/apps/${ path }`);
     }
   }
 };
