@@ -1,6 +1,8 @@
 <template>
   <div class="frame">
-    <component :is="currentApp" />
+    <keep-alive>
+      <component :is="currentApp" />
+    </keep-alive>
   </div>
 </template>
 

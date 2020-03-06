@@ -12,8 +12,5 @@ export default new Vuex.Store({
       state.currentApp = app;
     }
   },
-  actions: {
-  },
-  modules: {
-  },
+  actions: {}
 });

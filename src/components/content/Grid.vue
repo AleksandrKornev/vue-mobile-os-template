@@ -12,6 +12,7 @@
         class="grid__app"
         v-for="(app, appIndex) in appsScreen.apps"
         :key="appIndex"
+        @click="startApp(app.path)"
       >
         <div
           class="grid__app__img"
@@ -100,6 +101,10 @@ export default {
           this.formatedApps[itemIndex + 1].class = "center";
         }
       };
+    },
+
+    startApp(path) {
+      this.$router.push(`/app/${ path }`);
     }
   }
 };

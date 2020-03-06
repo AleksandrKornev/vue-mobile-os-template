@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { apps } from "@/apps/apps.json";
+
 import Grid from "./Grid.vue";
 import Frame from "./Frame.vue";
 
@@ -22,14 +24,7 @@ export default {
   },
   data() {
     return {
-      apps: [
-        {
-          name: "App"
-        },
-        {
-          name: "App"
-        }
-      ]
+      apps: []
     };
   },
   computed: {
@@ -38,9 +33,12 @@ export default {
     }
   },
   created() {
-    for (let i = 0; i < 42; i++) {
-      this.apps.push({
-        name: "App"
+    this.getListApps();
+  },
+  methods: {
+    getListApps() {
+      apps.forEach(app => {
+        this.apps.push(app);
       });
     }
   }

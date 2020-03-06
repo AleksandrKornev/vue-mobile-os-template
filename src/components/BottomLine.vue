@@ -6,13 +6,19 @@
         src="@/assets/images/burger-menu.png"
       >
     </div>
-    <div class="bottom_line__btn">
+    <div
+      class="bottom_line__btn"
+      @click="back"
+    >
       <img
         class="bottom_line__btn__img"
         src="@/assets/images/box.png"
       >
     </div>
-    <div class="bottom_line__btn">
+    <div
+      class="bottom_line__btn"
+      @click="back"
+    >
       <img
         class="bottom_line__btn__img back"
         src="@/assets/images/arrow.png"
@@ -23,7 +29,13 @@
 
 <script>
 export default {
-  name: "BottomLine"
+  name: "BottomLine",
+  methods: {
+    back() {
+      if (this.$route.path === "/") return;
+      this.$router.push("/");
+    }
+  }
 };
 </script>
 
